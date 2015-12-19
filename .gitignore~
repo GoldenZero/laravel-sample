@@ -1,6 +1,5 @@
 /vendor
 /node_modules
-/bower_components
 .idea/
 Homestead.yaml
 Homestead.json

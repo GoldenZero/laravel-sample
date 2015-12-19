@@ -1,12 +1,17 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "jadjoubran/laravel5-angular-material-starter",
+    "description": "Laravel 5 angular material starter",
+    "keywords": ["laravel", "angular", "material", "starter", "ui-router", "api", "angular-material"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "laravel/framework": "5.1.*",
+        "barryvdh/laravel-debugbar": "~2.0",
+        "tymon/jwt-auth": "0.5.*",
+        "dingo/api": "1.0.x@dev",
+        "barryvdh/laravel-cors": "0.7.x",
+        "laravelangular/generators": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -42,7 +47,14 @@
             "php -r \"copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "php artisan key:generate"
+            "php -r \"copy('.env.example', '.env');\"",
+            "php -r \"unlink('code_of_conduct.md');\"",
+            "php -r \"unlink('CHANGELOG.md');\"",
+            "php -r \"unlink('.codeclimate.yml');\"",
+            "php -r \"unlink('.travis.yml');\"",
+            "php -r \"rmdir('.ebextensions');\"",
+            "php artisan key:generate",
+            "php artisan jwt:generate"
         ]
     },
     "config": {

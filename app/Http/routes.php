@@ -7,7 +7,6 @@ Route::get('/unsupported-browser', 'AngularController@unsupported');
 $api->version('v1', function ($api) {
 
     $api->post('users/login', 'LoginController@login');
-
 });
 
 //protected routes with JWT (must be logged in to access any of these routes)

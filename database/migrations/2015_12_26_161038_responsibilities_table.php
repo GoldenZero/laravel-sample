@@ -12,9 +12,9 @@ class ResponsibilitiesTable extends Migration
      */
     public function up()
     {
-        Schema::table('responsibilities', function (Blueprint $table) {
+        Schema::create('responsibilities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('symbol');
+            $table->string('key');
         });
     }
 

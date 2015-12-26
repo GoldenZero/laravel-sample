@@ -12,8 +12,11 @@ class ExchangeRatesTable extends Migration
      */
     public function up()
     {
-        Schema::table('exchange_rates', function (Blueprint $table) {
-            //
+        Schema::create('exchange_rates', function (Blueprint $table) {
+            $table->increments('id');
+            $table->foreign('source_currency_id')->references('id')->on('currencies');
+            $table->foreign('dest_currency_id')->references('id')->on('currencies');
+            $table->float('rate');
         });
     }
 
@@ -24,8 +27,6 @@ class ExchangeRatesTable extends Migration
      */
     public function down()
     {
-        Schema::table('exchange_rates', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('exchange_rates');
     }
 }

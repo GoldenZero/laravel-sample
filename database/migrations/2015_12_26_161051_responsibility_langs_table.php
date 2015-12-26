@@ -12,7 +12,7 @@ class ResponsibilityLangsTable extends Migration
      */
     public function up()
     {
-        Schema::table('responsibility_langs', function (Blueprint $table) {
+        Schema::create('responsibility_langs', function (Blueprint $table) {
             $table->increments('id');
             $table->foreign('responsibility_id')->references('id')->on('responsibilities');
             $table->string('lang');

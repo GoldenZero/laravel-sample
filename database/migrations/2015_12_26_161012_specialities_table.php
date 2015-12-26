@@ -12,9 +12,9 @@ class SpecialitiesTable extends Migration
      */
     public function up()
     {
-        Schema::table('specialities', function (Blueprint $table) {
+        Schema::create('specialities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('symbol');
+            $table->string('key');
         });
     }
 

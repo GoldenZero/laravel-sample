@@ -12,7 +12,7 @@ class RecommendationsTable extends Migration
      */
     public function up()
     {
-        Schema::table('recommendations', function (Blueprint $table) {
+        Schema::create('recommendations', function (Blueprint $table) {
             $table->increments('id');
             $table->foreign('sender_id')->references('id')->on('users');
             $table->foreign('receiver_id')->references('id')->on('users');

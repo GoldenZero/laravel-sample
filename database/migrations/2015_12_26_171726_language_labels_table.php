@@ -12,8 +12,11 @@ class LanguageLabelsTable extends Migration
      */
     public function up()
     {
-        Schema::table('language_labels', function (Blueprint $table) {
-            //
+        Schema::create('language_labels', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('key');
+            $table->string('lang');
+            $table->string('label');
         });
     }
 
@@ -24,8 +27,6 @@ class LanguageLabelsTable extends Migration
      */
     public function down()
     {
-        Schema::table('language_labels', function (Blueprint $table) {
-            //
-        });
+        Schema::drpo('language_labels');
     }
 }

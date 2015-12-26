@@ -12,7 +12,7 @@ class SpokenLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('spoken_languages', function (Blueprint $table) {
+        Schema::create('spoken_languages', function (Blueprint $table) {
             //
         });
     }
@@ -24,7 +24,7 @@ class SpokenLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('spoken_languages', function (Blueprint $table) {
+        Schema::create('spoken_languages', function (Blueprint $table) {
             //
         });
     }

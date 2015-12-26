@@ -12,9 +12,9 @@ class ProfessionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('professions', function (Blueprint $table) {
+        Schema::create('professions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('symbol');
+            $table->string('key');
         });
     }
 

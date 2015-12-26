@@ -12,13 +12,13 @@ class InvitationsTable extends Migration
      */
     public function up()
     {
-        Schema::table('invitations', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('invitations', function (Blueprint $table) {
+            /*$table->increments('id');
             $table->foreign('sender_id')->references('id')->on('users');
             $table->foreign('receiver_id')->references('id')->on('users');
             $table->string('voucher');
             $table->string('email');
-            $table->timestamps();
+            $table->timestamps();*/
         });
     }
 

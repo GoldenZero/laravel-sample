@@ -44,7 +44,6 @@ class ProfilesTable extends Migration
             $table->integer('job_type');
             $table->integer('accommodation');
             $table->integer('home_type');
-            $table->integer('education');
         });
     }
 

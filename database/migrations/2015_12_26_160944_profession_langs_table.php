@@ -12,7 +12,7 @@ class ProfessionLangsTable extends Migration
      */
     public function up()
     {
-        Schema::table('profession_langs', function (Blueprint $table) {
+        Schema::create('profession_langs', function (Blueprint $table) {
             $table->increments('id');
             $table->foreign('profession_id')->references('id')->on('professions');
             $table->string('lang');

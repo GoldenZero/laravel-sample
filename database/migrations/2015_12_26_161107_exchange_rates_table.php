@@ -14,6 +14,8 @@ class ExchangeRatesTable extends Migration
     {
         Schema::create('exchange_rates', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('source_currency_id')->unsigned();
+            $table->integer('dest_currency_id')->unsigned();
             $table->foreign('source_currency_id')->references('id')->on('currencies');
             $table->foreign('dest_currency_id')->references('id')->on('currencies');
             $table->float('rate');

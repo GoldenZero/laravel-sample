@@ -27,6 +27,6 @@ class LanguageLabelsTable extends Migration
      */
     public function down()
     {
-        Schema::drpo('language_labels');
+        Schema::drop('language_labels');
     }
 }

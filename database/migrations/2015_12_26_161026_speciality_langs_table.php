@@ -14,9 +14,13 @@ class SpecialityLangsTable extends Migration
     {
         Schema::create('speciality_langs', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('speciality_id')->references('id')->on('specialities');
+            $table->integer('speciality_id')->unsigned();
             $table->string('lang');
             $table->string('label');
+        });
+
+        Schema::table('speciality_langs', function (Blueprint $table) {
+            $table->foreign('speciality_id')->references('id')->on('specialities');
         });
     }
 

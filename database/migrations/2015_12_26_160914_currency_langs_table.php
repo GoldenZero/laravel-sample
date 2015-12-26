@@ -14,9 +14,13 @@ class CurrencyLangsTable extends Migration
     {
         Schema::create('currency_langs', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('currency_id')->references('id')->on('currencies');
+            $table->integer('currency_id')->unsigned();
             $table->string('lang');
             $table->string('label');
+        });
+
+        Schema::table('currency_langs', function (Blueprint $table) {
+            $table->foreign('currency_id')->references('id')->on('currencies');
         });
     }
 

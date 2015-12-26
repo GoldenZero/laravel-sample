@@ -14,9 +14,13 @@ class CountryLangsTable extends Migration
     {
         Schema::create('country_langs', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('country_id')->references('id')->on('countries');
+            $table->integer('country_id')->unsigned();
             $table->string('lang');
             $table->string('label');
+        });
+
+        Schema::table('country_langs', function (Blueprint $table) {
+            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 

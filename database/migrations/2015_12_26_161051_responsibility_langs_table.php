@@ -14,9 +14,13 @@ class ResponsibilityLangsTable extends Migration
     {
         Schema::create('responsibility_langs', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('responsibility_id')->references('id')->on('responsibilities');
+            $table->integer('responsibility_id')->unsigned();
             $table->string('lang');
             $table->string('label');
+        });
+
+        Schema::table('responsibility_langs', function (Blueprint $table) {
+            $table->foreign('responsibility_id')->references('id')->on('responsibilities');
         });
     }
 

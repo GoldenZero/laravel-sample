@@ -13,7 +13,8 @@ class ResponsibilitiesTable extends Migration
     public function up()
     {
         Schema::table('responsibilities', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->string('symbol');
         });
     }
 
@@ -24,8 +25,6 @@ class ResponsibilitiesTable extends Migration
      */
     public function down()
     {
-        Schema::table('responsibilities', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('responsibilities');
     }
 }

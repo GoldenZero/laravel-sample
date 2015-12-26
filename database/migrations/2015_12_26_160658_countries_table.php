@@ -13,7 +13,9 @@ class CountriesTable extends Migration
     public function up()
     {
         Schema::table('countries', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->string('key');
+            $table->string('symbol');
         });
     }
 
@@ -24,8 +26,6 @@ class CountriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('countries', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('countries');
     }
 }

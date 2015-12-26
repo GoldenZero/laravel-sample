@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Schema;
 
-class Configs extends Migration
+class LanguageLabelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +12,8 @@ class Configs extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
+        Schema::table('language_labels', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,6 +24,8 @@ class Configs extends Migration
      */
     public function down()
     {
-        Schema::drop('configs');
+        Schema::table('language_labels', function (Blueprint $table) {
+            //
+        });
     }
 }

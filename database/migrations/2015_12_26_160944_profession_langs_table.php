@@ -13,7 +13,10 @@ class ProfessionLangsTable extends Migration
     public function up()
     {
         Schema::table('profession_langs', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->foreign('profession_id')->references('id')->on('professions');
+            $table->string('lang');
+            $table->string('label');
         });
     }
 
@@ -24,8 +27,6 @@ class ProfessionLangsTable extends Migration
      */
     public function down()
     {
-        Schema::table('profession_langs', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('profession_langs');
     }
 }

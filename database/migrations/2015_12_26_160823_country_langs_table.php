@@ -13,7 +13,10 @@ class CountryLangsTable extends Migration
     public function up()
     {
         Schema::table('country_langs', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->foreign('country_id')->references('id')->on('countries');
+            $table->string('lang');
+            $table->string('label');
         });
     }
 
@@ -24,8 +27,6 @@ class CountryLangsTable extends Migration
      */
     public function down()
     {
-        Schema::table('country_langs', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('country_langs');
     }
 }

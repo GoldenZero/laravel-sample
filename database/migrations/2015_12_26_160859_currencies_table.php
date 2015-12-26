@@ -13,7 +13,8 @@ class CurrenciesTable extends Migration
     public function up()
     {
         Schema::table('currencies', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->string('symbol');
         });
     }
 
@@ -24,8 +25,6 @@ class CurrenciesTable extends Migration
      */
     public function down()
     {
-        Schema::table('currencies', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('currencies');
     }
 }

@@ -13,7 +13,10 @@ class SpecialityLangsTable extends Migration
     public function up()
     {
         Schema::table('speciality_langs', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->foreign('speciality_id')->references('id')->on('specialities');
+            $table->string('lang');
+            $table->string('label');
         });
     }
 
@@ -24,8 +27,6 @@ class SpecialityLangsTable extends Migration
      */
     public function down()
     {
-        Schema::table('speciality_langs', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('speciality_langs');
     }
 }

@@ -13,7 +13,8 @@ class ProfessionsTable extends Migration
     public function up()
     {
         Schema::table('professions', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->string('symbol');
         });
     }
 
@@ -24,8 +25,6 @@ class ProfessionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('professions', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('professions');
     }
 }

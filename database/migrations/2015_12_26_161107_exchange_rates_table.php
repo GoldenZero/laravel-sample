@@ -16,9 +16,12 @@ class ExchangeRatesTable extends Migration
             $table->increments('id');
             $table->integer('source_currency_id')->unsigned();
             $table->integer('dest_currency_id')->unsigned();
+            $table->float('rate');
+        });
+
+        Schema::table('exchange_rates', function (Blueprint $table) {
             $table->foreign('source_currency_id')->references('id')->on('currencies');
             $table->foreign('dest_currency_id')->references('id')->on('currencies');
-            $table->float('rate');
         });
     }
 

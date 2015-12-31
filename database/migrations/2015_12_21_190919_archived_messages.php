@@ -14,13 +14,17 @@ class ArchivedMessages extends Migration
     public function up()
     {
         Schema::create('archived_messages', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
             $table->increments('id');
-            $table->string('sender_id');
-            $table->string('receiver_id');
+            $table->integer('sender_id')->unsigned();
+            $table->integer('receiver_id')->unsigned();
             $table->string('message');
             $table->string('date');
             $table->timestamps();
+        });
+
+        Schema::table('archived_messages', function (Blueprint $table) {
+            $table->foreign('sender_id')->references('id')->on('users');
+            $table->foreign('receiver_id')->references('id')->on('users');
         });
     }
 

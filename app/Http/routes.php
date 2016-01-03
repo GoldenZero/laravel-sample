@@ -5,7 +5,7 @@ Route::get('/', 'AngularController@serveApp');
 Route::get('/unsupported-browser', 'AngularController@unsupported');
 
 $api->version('v1', function ($api) {
-    $api->get('users', 'Admin\UserController@index');
+    $api->resource('users', 'Admin\UserController');
     $api->post('users/login', 'LoginController@login');
 });
 
